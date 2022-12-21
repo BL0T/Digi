@@ -1,38 +1,17 @@
 package model;
 
-public class Student {
+public class Student extends Human {
 
-    private String firstName;
-    private String lastName;
-    private int year = 2022;
     private double mark;
-    private boolean isArmenian;
-    private char gender = '?';
 
-    public String getFirstName() {
-        return firstName;
+    public Student() {
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public Student(String firstName, String lastName, int year, boolean isArmenian, char gender, double mark) {
+        super(firstName, lastName, year, isArmenian, gender);
+        this.mark = mark;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        if (year >= 1905 && year <= 2022)
-            this.year = year;
-    }
 
     public double getMark() {
         return mark;
@@ -43,35 +22,9 @@ public class Student {
             this.mark = mark;
     }
 
-    public boolean isArmenian() {
-        return isArmenian;
-    }
-
-    public void setArmenian(boolean armenian) {
-        isArmenian = armenian;
-    }
-
-    public char getGender() {
-        return gender;
-    }
-
-    public void setGender(char gender) {
-        switch (gender) {
-            case 'F':
-            case 'f':
-            case 'M':
-            case 'm':
-                this.gender = gender;
-                break;
-        }
-    }
 
     public void printInfo() {
-        System.out.println(firstName
-                + " " + lastName
-                + ", born in " + year
-                + ", mark is " + mark
-                + (isArmenian ? ", is Armenian" : ", is not Armenian")
-                + ", gender " + gender);
+        super.printInfo();
+        System.out.println("mark: " + mark);
     }
 }

@@ -1,20 +1,28 @@
+import model.Dekan;
 import model.Student;
+import model.Teacher;
+import servis.DekanServis;
 import servis.StudentServis;
+import servis.TeacherServis;
 
 public class DigiSchool1 {
 
     public static void main(String[] args) {
-        StudentServis servis = new StudentServis();
-        Student s1 = servis.crateStudent();
-        Student s2 = servis.crateStudent();
-        Student s3 = servis.crateStudent();
+        StudentServis studentServis = new StudentServis();
+        Student s1 = studentServis.crateStudent();
 
-        Student[] students = {s1, s2, s3};
+        s1.printInfo();
 
-        servis.maxAge(students).printInfo();
-        servis.minAge(students).printInfo();
-        Student student = servis.minAxjkeqiAge(students);
-        if (student != null) student.printInfo();
-        else System.out.println("axchik chka");
+        TeacherServis teacherServis = new TeacherServis();
+        Teacher teacher = teacherServis.crateTeacher();
+
+        teacher.printInfo();
+
+        DekanServis dekanServis = new DekanServis();
+        Dekan dekan = dekanServis.crateDekan();
+
+        dekan.printInfo();
+
+
     }
 }
