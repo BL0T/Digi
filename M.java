@@ -20,10 +20,9 @@ public class M {
 
         String[] strings = Files.readAllLines(path).toArray(new String[0]);
 
-        for (int i = 0, j; i < strings.length; i++) {
-            String s = strings[i];
-            j = s.indexOf(',');
-            students[i] = (new Student(s.substring(0, j), Integer.parseInt(s.substring(j + 1))));
+        for (int i = 0; i < strings.length; i++) {
+            String[] str = strings[i].split(",", 2);
+            students[i] = (new Student(str[0], Integer.parseInt(str[1])));
         }
 
         return students;
