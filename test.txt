@@ -1,0 +1,11 @@
+Lilit,25
+Milena,24
+Gegham,31
+Hayk,41
+Ishxan,21
+Nelson,19
+Paruyr,33
+Sanya,22
+Sevak,20
+Suro,34
+Vigen,29

@@ -1,30 +1,35 @@
-package model;
+public class Student {
 
-public class Student extends Human {
-
-    private double mark;
-
-    public Student() {
+    public Student(String name, int age) {
+        this.name = name;
+        setAge(age);
     }
 
-    public Student(String firstName, String lastName, int year, boolean isArmenian, char gender, double mark) {
-        super(firstName, lastName, year, isArmenian, gender);
-        this.mark = mark;
+    public String getName() {
+        return name;
     }
 
-
-    public double getMark() {
-        return mark;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setMark(double mark) {
-        if (mark >= 0 && mark <= 100)
-            this.mark = mark;
+    public int getAge() {
+        return age;
     }
 
+    public void setAge(int age) {
+        if (age >= 0 && age <= 100)
+            this.age = age;
+    }
 
-    public void printInfo() {
-        super.printInfo();
-        System.out.println("mark: " + mark);
+    private String name;
+    private int age;
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
